@@ -1,17 +1,48 @@
 import React from "react";
 
-function Food({ favorite }) {
-  return <h1>I like {favorite}!</h1>;
+function Food({ name, picture }) {
+  return (
+    <div>
+      <h2>I like {name}</h2>
+      <img src={picture} alt="" />
+    </div>
+  );
 }
+
+const foodILike = [
+  {
+    name: "Kimchi",
+    image:
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIsfbkQ8vLo6Z-cBWscagoP0ilwuAcpzETVA&usqp=CAU",
+  },
+  {
+    name: "Samgyeopsal",
+    image:
+      "https://3.bp.blogspot.com/-hKwIBxIVcQw/WfsewX3fhJI/AAAAAAAAALk/yHxnxFXcfx4ZKSfHS_RQNKjw3bAC03AnACLcBGAs/s400/DSC07624.jpg",
+  },
+  {
+    name: "Bibimbap",
+    image:
+      "http://cdn-image.myrecipes.com/sites/default/files/styles/4_3_horizontal_-_1200x900/public/image/recipes/ck/12/03/bibimbop-ck-x.jpg?itok=RoXlp6Xb",
+  },
+  {
+    name: "Doncasu",
+    image:
+      "https://s3-media3.fl.yelpcdn.com/bphoto/7F9eTTQ_yxaWIRytAu5feA/ls.jpg",
+  },
+  {
+    name: "Kimbap",
+    image:
+      "http://cdn2.koreanbapsang.com/wp-content/uploads/2012/05/DSC_1238r-e1454170512295.jpg",
+  },
+];
 
 function App() {
   return (
     <div>
-      Hello!
-      <Food favorite="kimchi" />
-      <Food favorite="ramen" />
-      <Food favorite="samgyeobsal" />
-      <Food favorite="chicken" />
+      {foodILike.map((food) => (
+        <Food name={food.name} picture={food.image} />
+      ))}
     </div>
   );
 }
