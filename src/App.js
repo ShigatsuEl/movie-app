@@ -7,9 +7,11 @@ class App extends React.Component {
   state = {
     isLoading: true,
     movies: [],
+    point: "",
   };
 
   getMovies = async () => {
+    this.loadMovies();
     const {
       data: {
         data: { movies },
@@ -24,19 +26,35 @@ class App extends React.Component {
     여기서 사용한 fetch는 위의 axiox와 같은 역할을 한다. 표현방법만 다를 뿐, 어떤 것을 사용해도 문제 되지 않는다.
     */
     this.setState({ movies, isLoading: false });
-    console.log(movies);
   };
+
+  loadMovies() {
+    const pointArray = [];
+    const point = ".";
+    const pointInterval = setInterval(() => {
+      pointArray.push(point);
+      this.setState({ point: pointArray.join("") });
+      if (pointArray.length === 3) {
+        pointArray.splice(0, 3);
+      }
+    }, 300);
+
+    setTimeout(() => {
+      clearInterval(pointInterval);
+    }, 2000);
+  }
 
   componentDidMount() {
     this.getMovies();
   }
+
   render() {
     const { isLoading, movies } = this.state;
     return (
       <section className="container">
         {isLoading ? (
           <div className="loader">
-            <span className="loader__text">Loading...</span>
+            <span className="loader__text">Loading{this.state.point}</span>
           </div>
         ) : (
           <div className="movies">
