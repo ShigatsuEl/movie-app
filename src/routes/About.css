@@ -1,0 +1,28 @@
+.about__container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 20px;
+  max-width: 30%;
+  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
+    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+}
+
+.about__container span {
+  margin-bottom: 5px;
+}
+
+.about__container a {
+  color: red;
+  text-decoration: none;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.about__container a:hover {
+  opacity: 1;
+}

@@ -1,7 +1,16 @@
 import React from "react";
+import "./About.css";
 
 function About() {
-  return <span>About this page: I built it because I love movie.</span>;
+  return (
+    <div className="about__container">
+      <span>Thank you for watching my lack of app!</span>
+      <span>If you want how to make this app, Click this URL ⬇</span>
+      <a href="https://github.com/ShigatsuEl/movie-app" target="_blank">
+        Gihub Page
+      </a>
+    </div>
+  );
 }
 
 export default About;

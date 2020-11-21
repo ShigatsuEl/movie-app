@@ -1,11 +1,3 @@
-* {
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #eff3f7;
-}
-
 .loader {
   position: absolute;
   top: 50%;
