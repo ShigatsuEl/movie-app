@@ -1,0 +1,58 @@
+@keyframes movieAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  3% {
+    transform: translateY(0);
+  }
+  48% {
+    transform: translateY(-3%);
+  }
+  52% {
+    transform: translateY(-3%);
+  }
+  97% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.movie {
+  display: flex;
+  border-radius: 20px;
+  padding: 20px;
+  background-color: white;
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.movie:hover {
+  box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+  animation: movieAnimation 1s ease-in-out infinite;
+}
+
+.movie__data {
+  margin-left: 10px;
+}
+
+.movie__data .movie__title {
+  margin-bottom: 5px;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.movie__data .movie__year {
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+  font-weight: 400;
+}
+
+.movie__data .movie__genres {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.movie__data .movie__genres li {
+  margin-right: 5px;
+}
