@@ -1,3 +1,8 @@
+.movie__link-detail {
+  color: black;
+  text-decoration: none;
+}
+
 @keyframes movieAnimation {
   0% {
     transform: translateY(0);
